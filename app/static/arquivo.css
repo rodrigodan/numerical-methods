@@ -1,0 +1,35 @@
+.title{
+    font-size:20px;
+    font-weight:300;
+    letter-spacing: -0.5px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    text-align:center;
+}
+
+.glyphicon-item{
+    text-align:center;
+    font-size: 50px;
+}
+
+.central{
+    padding-left:0%;
+    padding-right:0%;
+}
+
+.btn-feature{
+    width:100%;
+}
+
+.form-boder{
+    padding: 20px;
+    border: 1px solid #d8dee2;
+    background-color:#fff;
+    border-radius: 5px;
+    
+}
+
+
+
+/* .botao{
+    width: 360px;
+} */

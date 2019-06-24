@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta content='5; url=http://127.0.0.1:5000' http-equiv='refresh'> -->
+    <title>Formulário</title>
+
+    <!-- Bootstrap -->
+    <!-- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}">
+    
+    <!-- <link href="arquivo.css" rel="stylesheet"> -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='arquivo.css') }}">
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+       
+
+        <style type = "text/css">
+                table, td {
+                    border: 1px solid black;
+                    border-spacing: 10px;
+                    padding: 15px;
+                }
+        </style>
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+        <nav class="navbar navbar-fixed-top navbar-inverse navbar-transparente">
+            </nav>
+
+        
+      <div style="padding-top:30px;" class="container">
+
+          <div class="page-header">
+            <div class = "row">
+                <div class = "col-sm-4 col-4">
+                    
+                </div>
+                
+                <div class = "col-sm-4 col-4">
+                        
+                    <div class="glyphicon-item">
+
+                        <div class="glyphicon glyphicon-book" aria-hidden="true"></div>
+
+                    </div>
+
+                    <h1 class = "title">Line criterion and jacobi method</h1>
+
+                    <div class = "form-boder">
+
+                        <form>
+                                <div class="form-group"><!-- você consegue agrupar elementos de um formulário -->
+                                    
+        
+                                    <!-- com o for, eu dico esse label está associado com o ID nome -->
+                                    <input type="text" class="form-control" id="dimension" placeholder="Matrix dimension n (int)">
+                                </div>
+
+                                <div class="form-group"><!-- você consegue agrupar elementos de um formulário -->
+                                
+
+                                    <!-- com o for, eu dico esse label está associado com o ID nome -->
+                                    <input type="text" class="form-control" id="elements" placeholder="Matrix coordinates aij (a11,a12,a13,...) (float)">
+                                
+                                </div>
+
+                                <div class="form-group"><!-- você consegue agrupar elementos de um formulário -->
+                                    
+                                    <!-- com o for, eu dico esse label está associado com o ID nome -->
+                                    <input type="text" class="form-control" id="vetorB" placeholder="Vector coordinates bi (b1,b2,b3...) (float)">
+                                
+                                </div>
+
+                                <div class="form-group"><!-- você consegue agrupar elementos de um formulário -->
+        
+                                    <!-- com o for, eu dico esse label está associado com o ID nome -->
+                                    <input type="text" class="form-control" id="vetorX" placeholder="Vector coordinates xi (x1,x2,x3...) (float)">
+                                
+                                </div>
+
+                                <div class="form-group"><!-- você consegue agrupar elementos de um formulário -->    
+        
+                                    <!-- com o for, eu dico esse label está associado com o ID nome -->
+                                    <input type="text" class="form-control" id="interection_number" placeholder="Quantity of interaction(int)">
+                                
+                                </div>
+        
+                        </form>
+
+                        <button type="submit" class="btn btn-primary btn-feature" id = "send" >calculate</button>
+                    </div>
+
+                </div>
+                
+                <div class = "col-sm-4 col-4">
+
+                </div>
+            </div>
+
+            </div>
+
+
+
+
+
+            <br>
+            <br>
+
+
+            <div class="row">
+                <div class = "col-sm-4 col-4">
+                    <div id = "tables2">
+
+                    </div>
+                </div>
+
+                <div class = "col-sm-4 col-4">
+                        <div style="font-size:15px; text-align: justify;" id = "line-criteria">
+                            
+                        </div>
+                </div>
+
+                <div class = "col-sm-4 col-4">
+                        <div id = "tables4">
+                            
+                        </div>
+                </div>
+    
+            </div>
+
+            <div class="row">
+                    <div class = "col-sm-8 col-8">
+                        <div style="font-size:15px; text-align: justify;" id = "line-criteria_cont">
+    
+                        </div>
+                    </div>
+
+                    <div class = "col-sm-4 col-4">
+
+                    </div>
+            </div>
+
+            <div class = "row">
+                
+                <div class = "col-sm-8 col-8">
+                    <div style = "padding-top:20px;" id = "system_solution">
+                    </div>
+                </div>
+                
+                <div class = "col-sm-4 col-4">
+                    <div style = "padding-top:20px;" id = "Erro">
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class = "row">
+                <div class = "col-sm-4 col-4">
+                    <div style = "text-align: justify; padding-top:20px; font-size:15px;" id = "information">
+
+                    </div>
+                </div>
+            </div>    
+        </div>
+         
+
+          <div id="result"></div>
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- esse link é importante caso você queira carregar alguns pluings -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="LU-Decomposition.js"></script> -->
+    <script src= "{{ url_for('static',filename='jacobi.js') }}"></script>
+
+
+    
+
+</body>
+</html>
